@@ -10,7 +10,7 @@ export const Details = ()=>{
     useEffect(()=>{
         const options = {method: 'GET'};
 
-        fetch(`http://localhost:3000/api/job/job-posts/${id}`, options)
+        fetch(`https://job-listing-backend-sepia.vercel.app/api/job/job-posts/${id}`, options)
         .then(response => response.json())
         .then(response => setData({...response.jobPost}))
         .catch(err => console.error(err));

@@ -17,7 +17,7 @@ export const RegisterForm = ()=>{
 
   // Send the POST request
   try {
-    const response = await fetch("http://localhost:3000/api/auth/register", {
+    const response = await fetch("https://job-listing-backend-sepia.vercel.app/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -38,7 +38,7 @@ export const JobForm=()=> {
       if (id) {
         setId(id);
         const options = { method: 'GET' };
-        fetch(`http://localhost:3000/api/job/job-posts/${id}`, options)
+        fetch(`https://job-listing-backend-sepia.vercel.app/api/job/job-posts/${id}`, options)
           .then(response => response.json())
           .then(response => setFormData({ ...response.jobPost }))
           .catch(err => console.error(err));
@@ -75,7 +75,7 @@ export const JobForm=()=> {
  const data = {...formData, name:recruiterName}
   // Send the POST request
   try {
-    const response = await fetch("http://localhost:3000/api/job/job-posts", {
+    const response = await fetch("https://job-listing-backend-sepia.vercel.app/api/job/job-posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ export const JobForm=()=> {
  const data = {...formData, name:recruiterName}
   // Send the POST request
   try {
-    const response = await fetch(`http://localhost:3000/api/job/job-posts/${id}`, {
+    const response = await fetch(`https://job-listing-backend-sepia.vercel.app/api/job/job-posts/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
