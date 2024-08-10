@@ -6,6 +6,7 @@ export const AddJob = ()=>{
         <div style={{display:"flex"}}>
             <JobForm/>
             <img style={{maxHeight:"100vh", width:"50vw"}}  src={JobImage}/>
+            
         </div>    
         )
 }
