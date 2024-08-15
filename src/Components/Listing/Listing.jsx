@@ -17,7 +17,14 @@ export const Listing = ()=>{
             setJobs([...arr])
         }
         else{
-            const options = {method: 'GET'};
+            const options = {
+              mode: "cors",
+              method:"GET",
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+                "cache-control": "no-cache",
+              },
+            };
         fetch(`https://job-listing-backend-sepia.vercel.app/api/job/job-posts?skills=`, options)
         .then(response => response.json())
         .then(response => setJobs([...response.jobPosts]))
@@ -36,7 +43,14 @@ export const Listing = ()=>{
         setSkills([...skills])
     }
     useEffect(()=>{
-        const options = {method: 'GET'};
+        const options = {
+          mode: "cors",
+          method:"GET",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "cache-control": "no-cache",
+          },
+        };
         const search = skills.join("&")
         fetch(`https://job-listing-backend-sepia.vercel.app/api/job/job-posts?skills=${search}`, options)
         .then(response => response.json())
